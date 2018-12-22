@@ -1,0 +1,45 @@
+#map {
+    height:116%;
+    width:100%;
+    margin: 0 auto;
+
+  }
+
+  html, body {
+    height: 90%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+}
+
+.btn-success,
+.btn-info {
+    color: rgb(0, 0, 0);
+}
+
+.newBtn{
+    display:block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+#map {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

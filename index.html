@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8" />
+
+    <title>Maps api</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+
+</head>
+
+<body ng-app='myApp' ng-controller='myAppCtrl'>
+
+    <div class="sidenav">
+        <ul class="list-group">
+            <li class="list-group-item mx-2" ng-repeat='marker in reOrderArr | orderBy: "location.d" '>{{marker.name}}
+                <span class="text-muted d-block" style="font-size:70%">Latitude: {{marker.location['latitude']}} ,
+                    Longitude: {{marker.location['longitude']}}</span>
+                <span class="text-danger" style="font-size: 0.7rem">Distance from center: {{marker.location.d}} KM</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="navbar bg-primary">
+
+        <div style="margin-left: 16%; font-style: italic;">
+            <a class="navbar-brand text-dark" href="#">Compie mapApp</a>
+        </div>
+        <div>
+            <button id="button2" ng-click='changeCenter(-25.2744, 133.7751)' class="font-weight-bold btn btn-success btn-sm">
+                Australia
+            </button>
+            <button id="button" ng-click='changeCenter(31.0461, 34.8516)' class="font-weight-bold btn btn-success btn-sm">
+                Israel
+            </button>
+            <button id="button3" ng-click='changeCenter(37.090240, -95.712891)' class="font-weight-bold btn btn-success btn-sm">
+                United States
+            </button>
+            <button id="button5" ng-click='changeCenter(46.2276, 2.2137)' class="font-weight-bold btn btn-success btn-sm">
+                France
+            </button>
+            <button id="button4" ng-click='changeCenter(36.2048, 138.2529)' class="font-weight-bold btn btn-success btn-sm">
+                Japan
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <div id="map"></div>
+
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXvdByHYIUrNGQ9KyHjLAmc9lDePopXuU&callback=initMap"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+
+
+    <script src="app.js"></script>
+    <script src="users/usersCtrl.js"></script>
+    <script src="users/usersSrv.js"></script>
+
+</body>
+
+</html>
